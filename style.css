@@ -1,0 +1,116 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  height: 100vh;
+  background-image: url('./img-19.avif');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.container {
+  animation: achicar 60s ease forwards;
+  animation-delay: 5s;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+.sombrear {
+  filter: invert(1);
+}
+
+.cloud {
+  position: absolute;
+  width: 80%;
+  pointer-events: none;
+  user-select: none;
+  transition: .5s;
+}
+
+.cloud1 {
+  left: -50%;
+  top: -25%;
+  animation: derecha 7s ease infinite alternate;
+  
+}
+.cloud2 {
+  right: -50%;
+  bottom: -25%;
+  animation: izquierda 7s ease infinite alternate;
+}
+
+
+@keyframes derecha {
+  0% {transform: translate(0vw);}
+  100% {transform: translate(50vw);}
+}
+@keyframes izquierda {
+  0% {transform: translate(0vw);}
+  100% {transform: translate(-50vw);}
+}
+
+@keyframes achicar {
+  0% {
+    scale: 1;
+  }
+  8.33333333333% {
+    scale: .9;
+  }
+  16.6666666667% {
+    scale: .8;
+  }
+  25% {
+    scale: .7;
+  }
+  33.3333333333% {
+    scale: .6;
+  }
+  41.6666666667% {
+    scale: .5;
+  }
+  50% {
+    scale: .4;
+  }
+  58.3333333333% {
+    scale: .5;
+  }
+  66.6666666667% {
+    scale: .6;
+  }
+  75% {
+    scale: .7;
+  }
+  83.3333333333% {
+    scale: .8;
+  }
+  91.6666666667% {
+    scale: .9;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+@media (width <= 1200px) and (orientation: portrait) {
+  .container {
+    animation-delay: 0s;
+  }
+  .cloud2 {
+    display: none;
+  }
+}
